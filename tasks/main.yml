@@ -36,7 +36,7 @@
 
 - name: Create a volume group on top of /dev
   community.general.lvg:
-    vg: { { lvm_vgname } }
+    vg: {{ lvm_vgname }}
     pvs: /dev/vdb1
 
 
