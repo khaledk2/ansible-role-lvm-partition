@@ -18,10 +18,6 @@
      msg: "default:  {{ lvm_lvfilesystem }}"
 
 
-- name: display vars values
-  debug:
-    msg: "default:  {{ docker_lvopts }}"
-
 - name: storage | create logical volume
   become: true
   lvol:
