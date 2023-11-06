@@ -3,7 +3,9 @@
 
 - name: display vars values
   debug:
-     msg: "default: {{ lvm_vgname }}, {{ lvm_lvmount }}, {{ lvm_lvsize}}, {{ lvm_lvfilesystem }}, {{ docker_lvopts }}"
+     msg: "default: {{ lvm_vgname }}, {{ lvm_lvmount }},
+     {{ lvm_lvsize}}, {{ lvm_lvfilesystem }},
+      {{ docker_lvopts }}"
 
 - name: storage | create logical volume
   become: true
