@@ -17,6 +17,14 @@
   debug:
      msg: "default:  {{ lvm_lvfilesystem }}"
 
+- name: System | install lvm2
+  become: true
+  ansible.builtin.dnf:
+    update_cache: true
+    name:
+      - lvm2
+    state: present
+
 
 - name: storage | create logical volume
   become: true
