@@ -35,6 +35,7 @@
      msg: "default:  {{ output }}"
 
 - name: storage | Create a volume group on top of /dev
+  become: yes
   community.general.lvg:
     vg: "{{ lvm_vgname }}"
     pvs: /dev/{{ lvm_vgname }}
@@ -54,7 +55,6 @@
     fstype: "{{ lvm_lvfilesystem }}"
     dev: /dev/{{ lvm_vgname }}/{{ lvm_lvname }}
     resizefs: true
-
 
 
 - name: storage | mount
