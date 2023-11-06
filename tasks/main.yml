@@ -27,7 +27,7 @@
 
 - name: System | install lvm2
   become: true
-  command: vgs --help
+  command: lvdisplay
   register: output
 
 - name: display output  (output)
