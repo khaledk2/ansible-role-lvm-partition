@@ -36,8 +36,9 @@
 
 - name: Create a volume group on top of /dev
   community.general.lvg:
-    vg: vg.services
-    pvs: /dev/{{ lvm_vgname }}
+    vg: { { lvm_vgname } }
+    pvs: /dev/vdb1
+
 
 - name: storage | create logical volume
   become: true
