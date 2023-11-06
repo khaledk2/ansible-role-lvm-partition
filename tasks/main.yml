@@ -1,13 +1,6 @@
 ---
 # Setup LVM partition
 
-    lvm_vgname: "{{ docker_vgname }}"
-    lvm_lvname: docker-volume
-    lvm_lvmount: /var/lib/docker
-    lvm_lvsize: "{{ docker_volumesize }}"
-    lvm_lvfilesystem: "{{ docker_lvfilesystem }}"
-    lvm_lvopts: "{{ docker_lvopts | default(None) }}"
-
 - name: display vars values
   debug:
      msg: "default: {{ lvm_vgname }}, {{ lvm_lvmount }}, {{ lvm_lvsize}}, {{ lvm_lvfilesystem }}, {{ docker_lvopts }}"
