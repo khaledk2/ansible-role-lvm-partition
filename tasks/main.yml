@@ -1,49 +1,6 @@
 ---
 # Setup LVM partition
 
-- name: display vars values (lvm_vgname)
-  debug:
-     msg: "default: {{ lvm_vgname }}"
-
-- name: display vars values (lvm_lvmount)
-  debug:
-     msg: "default:  {{ lvm_lvmount }}"
-
-- name: display vars values (lvm_lvsize)
-  debug:
-     msg: "default:{{ lvm_lvsize}}"
-
-- name: display vars values (lvm_lvfilesystem)
-  debug:
-     msg: "default:  {{ lvm_lvfilesystem }}"
-
-- name: System | install lvm2
-  become: true
-  ansible.builtin.dnf:
-    update_cache: true
-    name:
-      - lvm2
-    state: present
-
-- name: System | display lvdisplay
-  become: true
-  command: lvdisplay
-  register: output
-
-- name: display output  (output)
-  debug:
-     msg: "default:  {{ output }}"
-
-- name: System | display pvdisplay
-  become: true
-  command: pvdisplay
-  register: output2
-
-- name: display output  (output2)
-  debug:
-     msg: "default:  {{ output2 }}"
-
-
 - name: storage | create logical volume
   become: true
   lvol:
