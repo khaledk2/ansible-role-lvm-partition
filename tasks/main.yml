@@ -38,7 +38,7 @@
   become: yes
   community.general.lvg:
     vg: "{{ lvm_vgname }}"
-    pvs: /var/lib
+    pvs: /var
 
 - name: storage | create logical volume
   become: true
