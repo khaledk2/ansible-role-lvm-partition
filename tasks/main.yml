@@ -1,6 +1,5 @@
 ---
 # Setup LVM partition
-
 - name: storage | create logical volume
   become: true
   lvol:
