@@ -34,12 +34,6 @@
   debug:
      msg: "default:  {{ output }}"
 
-- name: storage | Create a volume group on top of /dev
-  become: yes
-  community.general.lvg:
-    vg: "{{ lvm_vgname }}"
-    pvs: /var
-
 - name: storage | create logical volume
   become: true
   lvol:
